@@ -1,11 +1,10 @@
- name: Node.js CI
+name: Node.js CI
 
 on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
 
     steps:
       - name: Checkout code
@@ -20,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-       - name: Start application
+      - name: Start application
         run: |
           npm start > app.log 2>&1 &
           PID=$!
